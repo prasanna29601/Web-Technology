@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript validation</title>
+	<script type="text/javascript">
+		function validation() {
+		var name=document.getElementById('name').value;
+		var n=/(^[a-zA-Z])+[a-zA-Z0-9]*$/.test(name);
+		var pass=document.getElementById('pwd').value;
+		var p=/[a-zA-Z0-9!@#$%^&*]*$/.test(pass);
+		var email=document.getElementById('email').value;
+		var e=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
+		if(name.length<6)
+		{
+			alert('name should contain atleast 6 characters');
+		}
+		if(!n)
+		{
+			alert('name should start with alphabet followed by alphanumeric characters');
+		}
+		if(pass.length<6 )
+		{
+			alert('password must contain atleast 6 characters');
+		}
+		if(!p)
+		{
+			alert('password must contain only alphanumeric and special characters');
+		}
+
+		if(!e)
+		{
+			alert('Invalid email');
+		}
+		
+	}
+		
+	</script>
+</head>
+<body>
+	<center>
+	<form >
+<h1>Registration Form</h1>
+		<table bgcolor="blue" cellspacing="10">
+        <tr>
+		 <td><th><label for="name">Name</label></th></td>
+		 <td><input type="text" name="name" id="name" ></td>
+	    </tr>
+
+
+	<tr>
+		<td><th><label for="password" >password</label></th></td>
+		<td><input type="password" id="pwd"></td>
+	 </tr>
+
+
+	 <tr>
+		<td><th><label for="email" >E-mail</label></th></td>
+		<td><input type="text" id="email"></td>
+	 </tr>
+
+	 <tr>
+		<td><th><button type="button" onclick="validation()">submit</button></th></td>
+
+	</tr>
+
+</table>
+
+</form>
+</center>
+
+</body>
+</html>
